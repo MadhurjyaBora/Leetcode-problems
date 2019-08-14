@@ -1,0 +1,20 @@
+class Solution {
+    public String addBinary(String a, String b) {
+        StringBuilder sb = new StringBuilder();
+        int sum=0;
+        int carry=0;
+        int p = a.length()-1;
+        int q=b.length()-1;
+        while (p>=0 || q>=0){
+            int x = p>=0 ? a.charAt(p--) - '0' : 0;
+            int y = q>=0 ? b.charAt(q--) - '0' : 0;
+            sum = x + y + carry;
+            sb.insert(0, (sum%2));
+            carry = sum/2;
+            
+        }
+        if(carry>0)
+            sb.insert(0, carry);
+     return sb.toString();   
+    }
+}
