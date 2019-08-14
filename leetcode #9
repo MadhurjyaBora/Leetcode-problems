@@ -1,0 +1,18 @@
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        m=x
+        
+        sum=0
+        
+        if(x<0 or(x!=0 and x%10==0)):
+            
+            return False
+        
+        while m:
+            
+            sum=sum*10+m%10
+           
+            m=m//10
+            
+        return sum==x
+        
